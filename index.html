@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tridev Survi - Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,16 +13,15 @@
         }
 
         :root {
-            --text-primary: #333;
-            --text-secondary: #999;
-            --text-light: #ccc;
+            --text-primary: #000;
+            --text-secondary: #555;
+            --text-light: #aaa;
             --bg-primary: #fff;
-            --accent: #764ba2;
-            --accent-light: #f0e6f6;
+            --bg-light: #f5f5f5;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: var(--text-primary);
             background-color: var(--bg-primary);
             line-height: 1.8;
@@ -31,35 +31,50 @@
         nav {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #e0e0e0;
             z-index: 100;
         }
 
         nav .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        nav .logo .telugu {
+            font-size: 1.4rem;
+            margin-left: 0.2rem;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-primary);
             font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:first-child {
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--text-secondary);
+        }
+
+        nav a:first-of-type {
+            margin-right: auto;
         }
 
         .container {
@@ -71,7 +86,7 @@
         /* Hero Section */
         .hero {
             padding: 6rem 2rem;
-            min-height: 70vh;
+            min-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -80,32 +95,31 @@
 
         .hero-content {
             flex: 1;
-            max-width: 600px;
+            max-width: 650px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.05;
             margin-bottom: 2rem;
             color: var(--text-primary);
-        }
-
-        .hero h1 .highlight {
-            color: var(--accent);
-            font-weight: 700;
+            letter-spacing: -1px;
         }
 
         .hero h1 .emoji {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             display: inline-block;
-            margin: 0 0.5rem;
+            margin: 0 0.3rem;
         }
 
         .hero p {
             font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
-            line-height: 1.8;
+            line-height: 1.85;
+            font-weight: 300;
         }
 
         .hero p strong {
@@ -124,8 +138,9 @@
         .hero-images img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
             object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .hero-images .tall {
@@ -134,84 +149,56 @@
 
         /* Sections */
         section {
-            padding: 4rem 2rem;
-            border-top: 1px solid #eee;
+            padding: 5rem 2rem;
+            border-top: 1px solid #e0e0e0;
         }
 
         section h2 {
-            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
             margin-bottom: 3rem;
             color: var(--text-primary);
+            letter-spacing: -0.5px;
         }
 
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
         .project-card {
-            background: var(--accent-light);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
             color: inherit;
+            border: 1px solid #e0e0e0;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            border-color: var(--text-primary);
         }
 
         .project-card h3 {
-            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--accent);
+            color: var(--text-primary);
         }
 
         .project-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Image Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            aspect-ratio: 1;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item .label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.5rem;
-            font-size: 0.85rem;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         /* About Section */
@@ -222,31 +209,41 @@
 
         .about-content p {
             font-size: 1.05rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.9;
+            font-weight: 300;
         }
 
         .about-content p strong {
             color: var(--text-primary);
+            font-weight: 600;
         }
 
         /* Footer */
         footer {
-            background: #f8f8f8;
+            background: var(--bg-light);
             padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 1rem;
         }
 
         footer a {
-            color: var(--accent);
+            color: var(--text-primary);
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: var(--text-secondary);
         }
 
         /* Responsive */
@@ -254,16 +251,32 @@
             nav .container {
                 flex-wrap: wrap;
                 gap: 1rem;
+                padding: 1rem 1.5rem;
+            }
+
+            nav .logo {
+                font-size: 1.4rem;
+            }
+
+            nav .logo .telugu {
+                font-size: 1.1rem;
+            }
+
+            nav a:first-of-type {
+                margin-right: 0;
+                width: 100%;
+                order: 3;
             }
 
             .hero {
                 flex-direction: column;
-                padding: 3rem 2rem;
+                padding: 3rem 1.5rem;
                 min-height: auto;
+                gap: 2.5rem;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .hero-images {
@@ -276,7 +289,16 @@
             }
 
             section h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer a {
+                display: block;
+                margin: 0.5rem 0;
             }
         }
     </style>
@@ -285,10 +307,11 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="#home">Tridev Survi</a>
+            <div class="logo">
+                Tridev <span class="telugu">త్రిదేవ్</span>
+            </div>
             <a href="#projects">Projects</a>
             <a href="#blog">Blog</a>
-            <a href="#hobbies">Hobbies</a>
             <a href="#about">About</a>
         </div>
     </nav>
@@ -296,16 +319,16 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Hey there, I'm <span class="highlight">Tridev</span> <span class="emoji">👋</span> Welcome to my <span class="highlight">digital garden</span></h1>
+            <h1>Hey there, I'm <span class="emoji">👋</span> a passionate builder and creator</h1>
             
-            <p>I'm passionate about <strong>building things</strong> and learning new technologies. I enjoy combining <strong>design and development</strong> to create meaningful digital experiences.</p>
+            <p>I specialize in <strong>crafting digital experiences</strong> that are both beautiful and functional. With a focus on <strong>web development</strong> and <strong>design</strong>, I love bringing ideas to life through code.</p>
             
-            <p>When I'm not coding, you can find me <strong>exploring creative projects</strong>, <strong>reading about tech</strong>, or <strong>working on side hustles</strong>.</p>
+            <p>I'm constantly exploring new technologies, experimenting with creative projects, and working on ideas that inspire me. Let's build something extraordinary together.</p>
         </div>
         
         <div class="hero-images">
-            <img src="https://via.placeholder.com/300x200?text=Project" alt="Project showcase">
-            <img src="https://via.placeholder.com/300x400?text=Creative" alt="Creative work" class="tall">
+            <img src="https://via.placeholder.com/300x250?text=Design" alt="Design work">
+            <img src="https://via.placeholder.com/300x400?text=Development" alt="Development project" class="tall">
         </div>
     </section>
 
@@ -315,50 +338,17 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <a href="#" class="project-card">
-                    <h3>Project One</h3>
-                    <p>A showcase of your creative work and technical expertise. Built with modern web technologies.</p>
+                    <h3>Project Alpha</h3>
+                    <p>A cutting-edge web application built with modern technologies. Focused on performance, user experience, and scalability.</p>
                 </a>
                 <a href="#" class="project-card">
-                    <h3>Project Two</h3>
-                    <p>Demonstrating problem-solving skills and attention to detail in design and development.</p>
+                    <h3>Project Beta</h3>
+                    <p>Exploring the intersection of design and development. An innovative digital product that showcases creative problem-solving.</p>
                 </a>
                 <a href="#" class="project-card">
-                    <h3>Project Three</h3>
-                    <p>An exploration of new ideas and technologies that push creative boundaries.</p>
+                    <h3>Project Gamma</h3>
+                    <p>A full-stack solution demonstrating technical expertise and attention to detail. Built from concept to deployment.</p>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="hobbies">
-        <div class="container">
-            <h2>Creative Moments</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300?text=Photo+1" alt="Gallery image 1">
-                    <div class="label">Project One</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300?text=Photo+2" alt="Gallery image 2">
-                    <div class="label">Project Two</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300?text=Photo+3" alt="Gallery image 3">
-                    <div class="label">Project Three</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300?text=Photo+4" alt="Gallery image 4">
-                    <div class="label">Project Four</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300?text=Photo+5" alt="Gallery image 5">
-                    <div class="label">Project Five</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300?text=Photo+6" alt="Gallery image 6">
-                    <div class="label">Project Six</div>
-                </div>
             </div>
         </div>
     </section>
@@ -367,11 +357,11 @@
     <section id="about">
         <div class="about-content">
             <h2>About Me</h2>
-            <p>I'm a <strong>full-stack developer and designer</strong> with a passion for creating beautiful, functional digital experiences. I believe in the power of clean code and thoughtful design.</p>
+            <p>I'm a <strong>full-stack developer and designer</strong> passionate about creating meaningful digital experiences. I believe in the power of clean code, thoughtful design, and user-centered thinking.</p>
             
-            <p>With experience in <strong>web development, UI/UX design, and product thinking</strong>, I approach each project with a focus on user needs and business goals.</p>
+            <p>With experience spanning <strong>web development, UI/UX design, and product strategy</strong>, I approach every project with a commitment to excellence and innovation.</p>
             
-            <p>When I'm not working, I'm <strong>learning something new</strong>, contributing to open-source, or working on personal projects that excite me.</p>
+            <p>When I'm not coding, I'm learning new technologies, contributing to the open-source community, or working on personal projects that push my creative boundaries.</p>
         </div>
     </section>
 
