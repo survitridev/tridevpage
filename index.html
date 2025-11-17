@@ -235,6 +235,66 @@
             color: var(--text-primary);
             text-decoration: none;
             margin: 0 1.2rem;
+                    /* Pictures Gallery */
+        #Pictures {
+            padding: 5rem 2rem;
+            background: var(--bg-primary);
+        }
+
+        .pictures-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 2rem 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .pictures-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .pictures-gallery::-webkit-scrollbar-track {
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        .pictures-gallery::-webkit-scrollbar-thumb {
+            background: var(--text-secondary);
+            border-radius: 10px;
+        }
+
+        .pictures-gallery::-webkit-scrollbar-thumb:hover {
+            background: var(--text-primary);
+        }
+
+        .picture-item {
+            min-width: 400px;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .picture-item:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .picture-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .picture-item:hover img {
+            transform: scale(1.1);
+        }
+
+
             font-weight: 500;
             transition: color 0.3s ease;
         }
@@ -362,6 +422,33 @@
             <p>With experience spanning <strong>writing and product strategy</strong>, I approach every project with a commitment to excellence and innovation.</p>
             
             <p>When I'm not writing, I'm learning new technologies, contributing to the open-source community, or working on personal Projects that push my creative boundaries.</p>
+        </div>
+    </section>
+
+            <!-- Pictures Section -->
+    <section id="Pictures">
+        <div class="container">
+            <h2>Pictures</h2>
+            <div class="pictures-gallery">
+                <div class="picture-item">
+                    <img src="images/picture1.jpg" alt="Picture 1">
+                </div>
+                <div class="picture-item">
+                    <img src="images/picture2.jpg" alt="Picture 2">
+                </div>
+                <div class="picture-item">
+                    <img src="images/picture3.jpg" alt="Picture 3">
+                </div>
+                <div class="picture-item">
+                    <img src="images/picture4.jpg" alt="Picture 4">
+                </div>
+                <div class="picture-item">
+                    <img src="images/picture5.jpg" alt="Picture 5">
+                </div>
+                <div class="picture-item">
+                    <img src="images/picture6.jpg" alt="Picture 6">
+                </div>
+            </div>
         </div>
     </section>
 
