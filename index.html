@@ -73,6 +73,29 @@
             color: var(--text-secondary);
         }
 
+        /* Enhanced Hover Styles */
+        
+        /* Nav link underline animation */
+        nav a {
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--text-secondary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+
         nav a:first-of-type {
             margin-right: auto;
         }
@@ -181,6 +204,51 @@
             transform: translateY(-6px);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
             border-color: var(--text-primary);
+        }
+
+        /* Project card image zoom on hover */
+        .project-card {
+            overflow: hidden;
+        }
+        
+        .project-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Picture gallery hover effects */
+        .picture-item {
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .picture-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .picture-item img {
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        
+        .picture-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        
+        /* Footer links hover effect */
+        footer a {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        footer a:hover {
+            transform: translateY(-3px) scale(1.1);
+            color: var(--text-primary);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .project-card h3 {
