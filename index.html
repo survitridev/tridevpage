@@ -86,7 +86,8 @@
             align-items: center;
         }
 
-        .hero-content h3 {
+        60
+        {
             font-size: 48px;
             font-family: 'Playfair Display', serif;
             font-weight: 400;
@@ -94,6 +95,10 @@
             margin-bottom: 20px;
             font-style: italic;
         }
+
+         .greeting-text {
+ transition: opacity 0.25s ease-in-out;
+ }
 
         .hero-content h1 {
             font-size: 64px;
@@ -375,8 +380,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h3>Namaste,</h3>
-                <h1>I'm Tridev.</h1>
+ <h3 id="greeting" class="greeting-text">Namaste,</h3>                <h1>I'm Tridev.</h1>
                 <p>I'm an <strong>engineer and freelance writer</strong> passionate about cinema, music, and Telugu literature.</p>
                 <p>Working on making the <span class="highlight">everyday digital experience</span> a little better.</p>
                 <p style="margin-top: 20px; font-size: 15px;">I love to design, build, and write things.</p>
@@ -443,5 +447,37 @@
         </div>
         <p>© 2026 Tridev Survi. All rights reserved.</p>
     </footer>
+     <script>
+ const greetings = [
+ "Namaste,",
+ "नमस्ते,",
+ "Hello,",
+ "Hola,",
+ "Hallo,",
+ "Bonjour,",
+ "Ciao,",
+ "Salaam,",
+ "你好,",
+ "こんにちは,"
+ ];
+
+ let currentGreetingIndex = 0;
+ let scrollThreshold = 300;
+
+ window.addEventListener('scroll', () => {
+ const scrollPosition = Math.floor(window.scrollY / scrollThreshold);
+ const newIndex = scrollPosition % greetings.length;
+ 
+ if (newIndex !== currentGreetingIndex) {
+ currentGreetingIndex = newIndex;
+ const greeting = document.getElementById('greeting');
+ greeting.style.opacity = '0.5';
+ setTimeout(() => {
+ greeting.textContent = greetings[newIndex];
+ greeting.style.opacity = '1';
+ }, 250);
+ }
+ });
+ </script>
 </body>
 </html>
