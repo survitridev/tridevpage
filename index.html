@@ -545,6 +545,17 @@
 <section id="writing" class="reveal">...</section>
 <section id="pictures" class="reveal">...</section>
 <section id="contact" class="reveal">...</section>
+
+  .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
   
   <main>
     <!-- Hero Section -->
